@@ -8,6 +8,7 @@ import (
 // Handler function that responds with Hello World
 func helloWorld(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Hello world")
+    fmt.Println("See actions in action?")
 }
 
 func main() {
