@@ -1,4 +1,4 @@
-# hello-world-service
+# idp-configs-api
 
 A simple HTTP server that serves "Hello world" on http://localhost:8080/api/hello-world-service/v0/ping
 
