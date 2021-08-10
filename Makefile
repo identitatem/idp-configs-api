@@ -28,6 +28,9 @@ docker-run:
 test:
 	go test
 
+functional-test:
+	ginkgo -tags functional --v test/functional	
+
 vet:
 	go vet ./...
 
@@ -67,3 +70,5 @@ restart-app:
 	$(MAKE) scale-down NAMESPACE=$(NAMESPACE)
 	sleep 5
 	$(MAKE) scale-up NAMESPACE=$(NAMESPACE)	
+
+.PHONY: test

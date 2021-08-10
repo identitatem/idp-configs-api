@@ -31,3 +31,11 @@ cat << EOF > ${WORKSPACE}/artifacts/junit-dummy.xml
     <testcase classname="dummy" name="dummytest"/>
 </testsuite>
 EOF
+
+echo "** pr_check.sh - services"
+oc get service -n $NAMESPACE
+# echo "** port forward"
+# oc port-forward svc/idp-configs-api-service 8000:8000 -n $NAMESPACE
+echo "** curl"
+curl -v http://idp-configs-api-service:8000/
+echo "** end pr_check.sh"
