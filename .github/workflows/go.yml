@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Get dependencies
-      run: go get -u honnef.co/go/tools/cmd/staticcheck@latest
+      run: go get honnef.co/go/tools/cmd/staticcheck@latest
 
     - name: Check
       run: make check
