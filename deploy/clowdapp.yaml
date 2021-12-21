@@ -14,7 +14,9 @@ objects:
     deployments:
     - name: service
       minReplicas: ${{MIN_REPLICAS}}
-      web: true
+      webServices:
+        public:
+          enabled: True
       # Details about running pod
       podSpec:
         image: ${IMAGE}:${IMAGE_TAG}
