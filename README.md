@@ -123,3 +123,4 @@ make lint
 * Run `make generate-docs`
 
 The API will serve the docs under a `/docs` endpoint.
+test
