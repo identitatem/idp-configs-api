@@ -1,16 +1,17 @@
 [comment]: # ( Copyright Red Hat )
 # idp-configs-api
 
-Service to store and retrieve Identity Provider configurations. 
+Service to store and retrieve Identity Provider configurations.
 
 ---
 ### Basic setup:
 
-1. Install Golang 1.16
+1. Install Golang 1.17
 2. Run `make run-migrate`
 3. Run `make run`
 4. Access the API at http://localhost:3000/api/idp-configs-api/v0/openapi.json
    (All other routes are authenticated and require the X-RH-Identity request header to be set)
+   NOTE: You may want to have a JSON formatter extension loaded in your web browser to make reading the output easier.
 
 ---
 ### Setup with ephemeral clusters
@@ -26,7 +27,7 @@ Service to store and retrieve Identity Provider configurations.
       ```
       bonfire deploy idp-configs -n <reserved_ephemeral_namespace>
       ```
-    * Now the application should be running. You can check the pod with `oc get pods -n <reserved_ephemeral_namespace>` You can test by port-forwarding the app in one terminal and running a curl command in another 
+    * Now the application should be running. You can check the pod with `oc get pods -n <reserved_ephemeral_namespace>` You can test by port-forwarding the app in one terminal and running a curl command in another
       ```
         oc port-forward service/idp-configs-api-service 8000:8000 -n <reserved_ephemeral_namespace>
       ```
@@ -42,7 +43,7 @@ Service to store and retrieve Identity Provider configurations.
 
 ---
 
-### Setup with Minikube 
+### Setup with Minikube
 *Note: Testing on minikube can be a bit flaky and less reliable than testing on ephemeral clusters due to resource constraints.*
 
 This setup utilizes the following tools. Follow the steps in the links for installation:
